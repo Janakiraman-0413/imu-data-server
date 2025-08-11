@@ -32,7 +32,7 @@ async def receive_imu_data(payload: IMUPayload):
     print(f"[{latest_imu_data['timestamp']}] Data received!")
     return {"status": "success", "message": "Data stored"}
 
-@app.get("/imu-data")
+@app.get("/get-imu-data")
 async def send_imu_data():
     if not latest_imu_data:
         return {"status": "no data yet"}
